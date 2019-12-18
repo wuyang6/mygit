@@ -72,7 +72,11 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'DjangoDev.wsgi.application'
 
-a
+
+
+=======
+
+>>>>>>> 20ca6f7... 项目初始化，django中的路由
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
