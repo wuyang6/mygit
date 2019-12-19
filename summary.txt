@@ -1,0 +1,32 @@
+一、项目结构
+1.DjangoDev是项目名
+2.和项目名同名的目录存放Django的相关配置文件
+3.DjangoDev/asgi.py      ASGI异步服务器的相关配置
+4.DjangoDev/settings.py 存放的Django全局配置信息
+5.DjangoDev/urls.py     存放全局路由表
+6.DjangoDev/wsgi.py     在部署Django项目时，使用的wsgi服务器配置信息
+7.db.sqlite3            Django默认使用的sqlite数据库
+8.manage.py             Django提供的命令行操作工具，开发阶段使用它来启动项目和数据库的迁移等
+
+二、创建一个子应用
+1.创建子应用(在命令行输入python manage.py startapp 子应用名或者 工具-Run manage.py Task 在命令行输入startapp 子应用名)
+2.创建子应用后，需要修改项目目录下全局配置文件settings.py，INSTALLED_APPS变量中增加（'子应用名.apps.应用名首字母大写Config',）
+'projects.apps.ProjectsConfig',
+3.在子应用projects/views.py中，来创建相关功能
+4.在DjangoDev/urls.py中引用视图函数，添加路由信息
+
+三、子应用意义
+1.往往Django最小功能模块，会以应用的形式呈现
+2.方便重用
+3.结构更清晰
+
+四、子应用的结构
+1.projects/migrations   存放数据库迁移的相关信息
+2.projects/admin.py     为admin站点的配置信息
+3.projects/apps.py      存放的是app的标签等相关信息
+4.projects/models.py    存放数据库模型相关信息
+5.projects/tests.py     存放的是当前应用单元测试的相关信息
+6.projects/views.py     主要定义相关功能（业务逻辑）
+
+五、问题
+1.模板渲染的形式，把这种模式叫做前后端不分离，
